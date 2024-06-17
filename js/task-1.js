@@ -1,14 +1,18 @@
 function makeTransaction(quantity, pricePerDroid, customerCredits) {
-    const totalPrice = quantity * pricePerDroid;
-
-    if (totalPrice > customerCredits) {
-        return "Insufficient funds!";
-    } else {
-        return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
-    }
+  // Оголошення змінної для зберігання загальної суми замовлення
+  const totalPrice = quantity * pricePerDroid;
+  
+  // Перевірка, чи зможе клієнт оплатити замовлення
+  if (totalPrice > customerCredits) {
+    return "Insufficient funds!";
+  } else {
+    return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+  }
 }
-console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
-console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
-console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
+
+// Приклади виклику функції для перевірки її роботи
+console.log(makeTransaction(5, 300, 1500)); // повертає "You ordered 5 droids worth 1500 credits!"
+console.log(makeTransaction(5, 300, 1200)); // повертає "Insufficient funds!"
+console.log(makeTransaction(3, 400, 1200)); // повертає "You ordered 3 droids worth 1200 credits!"
+console.log(makeTransaction(10, 100, 1000)); // повертає "You ordered 10 droids worth 1000 credits!"
+console.log(makeTransaction(1, 1500, 1000)); // повертає "Insufficient funds!"

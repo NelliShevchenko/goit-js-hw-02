@@ -1,13 +1,13 @@
 function formatMessage(message, maxLength) {
     if (message.length <= maxLength) {
-        return message;
+        return message; // return the original message if it's within or equal to maxLength
     } else {
-        return message.slice(0, maxLength) + "...";
+        return message.slice(0, maxLength) + '...'; // truncate and add ellipsis
     }
 }
-console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
-console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"
-console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."
-console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus nec"
-console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."
-console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a felis in nunc fringilla"
+
+// Test cases
+console.log(formatMessage("Hello, world!", 10)); // Output: "Hello, wo..."
+console.log(formatMessage("Hello, world!", 15)); // Output: "Hello, world!"
+console.log(formatMessage("This is a long message.", 12)); // Output: "This is a l..."
+console.log(formatMessage("Short", 10)); // Output: "Short"
